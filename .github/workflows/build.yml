@@ -18,17 +18,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install cdbs devscripts quilt reprepro cmake
-        mkdir build
-        cd build
-        sh ../setup.sh
-        pwd
-        ls
+        sh setup.sh
     - name: build
       run: |
-        pwd
-        ls
-        cd build
-        pwd
-        ls
-        dpkg-buildpackage -us -uc
-        ls ..
+        sh build.sh
+        ls -lR $HOME/data/pkg
