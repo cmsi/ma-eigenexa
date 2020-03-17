@@ -13,7 +13,7 @@ jobs:
       run: |
         sh download.sh
         mkdir -p $HOME/data/src
-        mv *-orig.tar.gz $HOME/data/src
+        mv *.orig.tar.gz $HOME/data/src
     - name: setup
       run: |
         mkdir build
