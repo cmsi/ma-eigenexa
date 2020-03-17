@@ -1,0 +1,27 @@
+name: build
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@master
+    - name: source
+      run: |
+        sh download.sh
+        mkdir -p $HOME/data/src
+        mv *-orig.tar.gz $HOME/data/src
+    - name: setup
+      run: |
+        mkdir build
+        cd build
+        sh ../setup.sh
+    - name: build
+      run: |
+        ls
+        cd build
+        dpkg-buildpackage -us -uc
+        ls ..
