@@ -24,6 +24,7 @@ jobs:
         sh build.sh
         mkdir package
         mv $HOME/data/pkg/* package/
-    - uses: actions/checkout@v1
+    - uses: actions/upload-artifact@v1
+      with:
         name: package.zip
-        path: package
+        path: ./package
