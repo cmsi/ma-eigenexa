@@ -1,0 +1,31 @@
+--- a/src/dc_redist1_r.F
++++ b/src/dc_redist1_r.F
+@@ -203,7 +203,7 @@
+ !------------------------------------------------------------------
+ 
+       subroutine dc_redist1_sub_x(n, NB, a, b, ldm, wk1, wk2, NBQ)
+-
++      use comm_mod
+       use eigen_devel_mod
+       use mpi
+ !$    use omp_lib
+--- a/src/dc_redist2_r.F
++++ b/src/dc_redist2_r.F
+@@ -73,7 +73,7 @@
+ !--------*---------*---------*---------*---------*---------*---------*-*
+ 
+       subroutine dc_redist2_r(n, NB, a, lda, b, ldb, wk, lwk)
+-
++      use comm_mod
+       use eigen_devel_mod
+       use mpi
+ !$    use omp_lib
+@@ -253,7 +253,7 @@
+ 
+       subroutine  dc_redist2_sub_x(n, NB, a, lda, b, ldb,
+      &     wk1, wk2, ir_sz, ldr, PACK, MPACK, aa)
+-
++      use comm_mod
+       use eigen_devel_mod
+       use mpi
+ !$    use omp_lib
