@@ -21,6 +21,8 @@ jobs:
         mkdir build
         cd build
         sh ../setup.sh
+        pwd
+        ls
     - name: build
       run: |
         pwd
