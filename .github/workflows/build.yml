@@ -16,6 +16,8 @@ jobs:
         mv *.orig.tar.gz $HOME/data/src
     - name: setup
       run: |
+        sudo apt-get update
+        sudo apt-get -y install cdbs devscripts quilt reprepro cmake
         mkdir build
         cd build
         sh ../setup.sh
