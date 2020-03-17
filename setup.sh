@@ -19,4 +19,5 @@ cp -frp $SCRIPT_DIR/debian $BUILD_DIR
 cd $BUILD_DIR
 sudo apt-get update
 sudo apt-get -y upgrade
+dpkg-checkbuilddeps
 dpkg-checkbuilddeps 2>&1 | sed 's/dpkg-checkbuilddeps.*dependencies: //' | xargs sudo apt-get -y install

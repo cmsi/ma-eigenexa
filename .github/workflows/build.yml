@@ -23,7 +23,10 @@ jobs:
         sh ../setup.sh
     - name: build
       run: |
+        pwd
         ls
         cd build
+        pwd
+        ls
         dpkg-buildpackage -us -uc
         ls ..
