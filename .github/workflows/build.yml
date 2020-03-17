@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: source
       run: |
         sh download.sh
         mkdir -p $HOME/data/src
-        mv *.orig.tar.gz $HOME/data/src
+        mv *.orig.tar.gz $HOME/data/src/
     - name: setup
       run: |
         sudo apt-get update
@@ -22,4 +22,8 @@ jobs:
     - name: build
       run: |
         sh build.sh
-        ls -lR $HOME/data/pkg
+        mkdir package
+        mv $HOME/data/pkg/* package/
+    - uses: actions/checkout@v1
+        name: package.zip
+        path: package
